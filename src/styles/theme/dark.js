@@ -1,0 +1,3 @@
+export default {
+  // cores a serem usadas no app...
+};
