@@ -13,7 +13,10 @@ import { useFonts } from 'expo-font';
 
 function App() {
   const [fontsLoaded] = useFonts({
-    'Quicksand': require('./src/assets/fonts/Quicksand.ttf'),
+    'Quicksand-Regular': require('./src/assets/fonts/Quicksand-Regular.ttf'),
+    'Quicksand-Medium': require('./src/assets/fonts/Quicksand-Medium.ttf'),
+    'Quicksand-SemiBold': require('./src/assets/fonts/Quicksand-SemiBold.ttf'),
+    'Quicksand-Bold': require('./src/assets/fonts/Quicksand-Bold.ttf'),
   });
 
   if (!fontsLoaded) {
