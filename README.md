@@ -1,5 +1,7 @@
 # Aplicativo mobile da Bull Investimentos
 
+<p align="center"><img src="https://i.ibb.co/6B1NCnr/logogreen-Cut.png" width="350px" alt="Bull Investimentos" /></p>
+
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#funcionalidades">Funcionalidades</a> •
@@ -9,7 +11,7 @@
 </p>
 
 <h2 id="objetivo">Objetivo  :dart:</h2>
-Este projeto está sendo desenvolvido na 5ª Edição do Mega Hack, evento organizado pela Shawee. Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiros investiam na bolsa de valores, o que corresponde a apenas 1% da população. Grande parte dos brasileiros não investe por inúmeras razões, dentre as principais a falta de tempo para estudar ou/e falta de interesse. Com isto em mente, o objetivo deste projeto é simplificar o meio de se investir para seus usuários, criando um app simples, organizado, fácil de se usar, de modo que mesmo pessoas leigas que nunca investiram antes poderão fazer seu dinheiro render com apenas alguns cliques.
+Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiros investiam na bolsa de valores, o que corresponde a apenas 1% da população. Grande parte dos brasileiros não investe por inúmeras razões, dentre as principais têm-se falta de tempo para estudar ou/e nenhuma experiência no mercado financeiro.  <br /> Diante disto, o objetivo deste projeto é simplificar o meio de se investir para seus usuários, criando um app simples, organizado, fácil de se usar, de modo que mesmo pessoas leigas que nunca investiram antes poderão fazer seu dinheiro render com apenas alguns cliques.
 
 <h2 id="funcionalidades">Funcionalidades  :mag_right:</h2>
 <ul>
