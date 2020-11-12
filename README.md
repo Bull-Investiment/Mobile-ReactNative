@@ -65,4 +65,5 @@ As seguintes tecnologias foram utilizadas no projeto deste repositório:
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-<h2 id="status">Status: Em andamento...</h2>
+<h2 id="status">Status</h2>
+<p>Em andamento...</p>
