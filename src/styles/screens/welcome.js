@@ -1,18 +1,8 @@
 import styled from 'styled-components/native';
-import { StatusBar, Plataform, StyleSheet } from 'react-native';
 
 export const SafeArea = styled.SafeAreaView`
   background-color: ${props => props.theme.colors.primaryDarker};
 `;
-
-export const Container = styled.View`
-  flex: 1;
-  background: ${props => props.theme.colors.backgroundPrimary};
-`;
-
-export const androidSafeArea = StyleSheet.create({
-  paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight + 25 : 0
-});
 
 export const SvgContainer = styled.View`
   margin-top: -30px;
@@ -60,6 +50,6 @@ export const FooterButton = styled.TouchableOpacity`
   justify-content: center;
   padding: 15px 10px;
   width: 60px;
-  background: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primary};
   border-radius: 100px;
 `;

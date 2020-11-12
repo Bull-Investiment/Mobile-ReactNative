@@ -26,14 +26,6 @@ export const AuthProvider = ({ children }) => {
 
         loadToken();
     }, [])
-
-    async function signIn() {
-        // const response = await auth.signIn();
-    
-        // setUser(response.user);
-
-        // await AsyncStorage.setItem('@Auth:token', response.token);
-    }
     
     function signOut() {
         AsyncStorage.clear().then(() => {
@@ -42,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{signed: !!user, user, loading, signIn, signOut}}> 
+        <AuthContext.Provider value={{signed: !!user, user, loading, signOut}}> 
             {children}
         </AuthContext.Provider>
     )

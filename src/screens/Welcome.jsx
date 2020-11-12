@@ -4,10 +4,10 @@ import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 import { ThemeContext } from 'styled-components';
 
+import { Container } from '../styles/global';
+
 import {
   SafeArea,
-  Container,
-  androidSafeArea,
   SvgContainer,
   Content,
   WelcomeText,
@@ -24,13 +24,21 @@ import WelcomeSvg from '../assets/illustrations/welcomeSvg.svg';
 
 import Button from '../components/Button';
 
+import { useNavigation } from '@react-navigation/native';
+
 function Welcome() {
   const theme = useContext(ThemeContext);
+
+  const navigation = useNavigation();
+
+  const goToRegisterScreen = () => {
+    navigation.navigate('Register');
+  }
   
   return (
     <>
       <SafeArea />
-      <Container style={androidSafeArea}>
+      <Container>
         <SvgContainer>
           <WelcomeSvg width={'100%'} height={'280'} />
         </SvgContainer>
@@ -43,7 +51,7 @@ function Welcome() {
             </ButtonWrapper>
 
             <ButtonWrapper>
-              <Button text="CADASTRE-SE" onPress={() => {}}/>
+              <Button text="CADASTRE-SE" onPress={goToRegisterScreen}/>
             </ButtonWrapper>
           </View>
 

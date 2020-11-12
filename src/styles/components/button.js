@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ButtonContainer = styled.TouchableOpacity`
-  background: ${props => props.primary ? 
+  background-color: ${props => props.primary ? 
     props.theme.colors.primary : 
     props.theme.colors.backgroundSecondary
   };
