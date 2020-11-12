@@ -1,13 +1,27 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
 
-import { SafeArea } from '../styles/screens/welcome';
+import { 
+  SafeArea, 
+  Container, 
+  androidSafeArea, 
+  SvgContainer, 
+  Content
+} from '../styles/screens/welcome';
+
+import WelcomeSvg from '../assets/illustrations/welcomeSvg.svg';
 
 function Welcome() {
   return (
-    <SafeArea style={{paddingTop: StatusBar.currentHeight + 15}}>
-
-    </SafeArea>
+    <>
+    <SafeArea />
+      <Container style={androidSafeArea}>
+        <SvgContainer>
+          <WelcomeSvg width={'100%'} height={'280'} />
+        </SvgContainer>
+        <Content>
+        </Content>
+      </Container>
+      </>
   );
 }
 
