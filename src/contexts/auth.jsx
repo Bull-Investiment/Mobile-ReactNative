@@ -4,27 +4,27 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 // import * as auth from '../services/auth';
 
-import usePersistentState from '../util/usePersistentState';
-import getStorageDefault from '../util/getStorageDefault';
+import { getStorage, setStorage } from '../util/manageLocalStorage';
 
 const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = usePersistentState('@Auth:user', null);
+    const [user, setUser] = useState(null);
+    const [userHasInvestorInfo, setUserHasInvestorInfo] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function loadToken() {
-            const storageToken = await getStorageDefault('@Auth:token', null);
+        async function loadUser() {
+            const storagedUser = await getStorage('@Auth:user');
 
-            if (!storageToken) {
+            if (!storagedUser) {
               setUser(null);
             }
 
             setLoading(false);
         }
 
-        loadToken();
+        loadUser();
     }, []);
     
     const signOut = () => {
@@ -34,12 +34,23 @@ export function AuthProvider({ children }) {
     }
 
     const signIn = (userInfo) => {
-      // logica login -- check user in database etc
-      setUser(userInfo);
+      // do -- logica login -> check user in database etc
+      const { email, senha, keepConnection } = userInfo;
+
+      if (keepConnection) {
+        const setStatus = setStorage('@Auth:user', { email, senha });
+
+        if (!setStatus) {
+          setUser(null);
+          return; // erro
+        }
+      }
+
+      setUser({ email, senha });
     }
 
     return (
-        <AuthContext.Provider value={{signed: !!user, user, loading, signIn, signOut}}> 
+        <AuthContext.Provider value={{signed: !!user, user, loading, signIn, signOut, userHasInvestorInfo, setUserHasInvestorInfo}}> 
             {children}
         </AuthContext.Provider>
     )

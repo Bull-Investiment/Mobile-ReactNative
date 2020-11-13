@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import { Container, Content, ButtonWrapper, RememberMeView, RememberMeText, ImageLogo } from '../../styles/screens/login';
 
+import { ThemeContext } from 'styled-components';
 
 import { useAuth } from '../../contexts/auth';
 
@@ -12,6 +13,7 @@ import Checkbox from 'react-native-custom-checkbox';
 
 
 function Login() {
+  const theme = useContext(ThemeContext);
   const { signIn } = useAuth();
 
   const [buttonEnabled, setButtonEnabled] = useState(false)
@@ -64,9 +66,9 @@ function Login() {
         <RememberMeView>
           <Checkbox
             style={{
-              backgroundColor: '#121212', color: '#297815', borderRadius: 5,
+              backgroundColor: theme.colors.backgroundPrimary, color: theme.colors.primary, borderRadius: 5,
               borderWidth: 3,
-              borderColor: '#297815',
+              borderColor: theme.colors.primaryDarker,
               margin: 10
             }}
             checked={inputValue.keepConnection}

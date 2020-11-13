@@ -17,6 +17,6 @@ export const CustomButton = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
   font-family: 'Quicksand-Medium';
-  font-size: 22px;
+  font-size: ${props => props.smallText ? '18px' : '22px'};
   color: ${props => props.theme.colors.textOnPrimary};
 `;

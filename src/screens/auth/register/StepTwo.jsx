@@ -9,7 +9,7 @@ import InputText from '../../../components/InputText';
 import Button from '../../../components/Button';
 
 function RegisterStepTwo({ route }) {
-  const [buttonEnabled, setButtonEnabled] = useState(false)
+  const [buttonEnabled, setButtonEnabled] = useState(false);
   const [inputValue, setInputValue] = useState({
     email: "",
     senha: ""

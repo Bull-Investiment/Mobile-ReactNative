@@ -2,13 +2,15 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   margin: 10px;
+  margin-top: 15px;
   align-items: center;
   justify-content: center;
-  border-bottom-color: ${props => props.theme.colors.textOnPrimary}
+  border-bottom-width: ${props => props.hasBorderBottom ? "1px" : 0};
+  border-bottom-color: ${props => props.borderColor ?? props.theme.colors.textOnPrimary};
 `;
 
 export const Title = styled.Text`
-  color: ${props => props.theme.colors.textOnPrimary};
+  color: ${props => props.titleColor ?? props.theme.colors.textOnPrimary};
   font-family: 'Quicksand-Medium';
   font-size: 20px;
   margin-bottom: 5px;
@@ -24,7 +26,9 @@ export const Input = styled.TextInput`
   padding-right: 10px;
   padding-left: 10px;
   margin-bottom: 5px;
-  background-color: ${props => props.theme.colors.backgroundSecondary};
+  font-size: 18px;
+  background-color: ${props => props.backgroundColor ?? props.theme.colors.backgroundSecondary};
   border-radius: 12px;
-  color: ${props => props.theme.colors.textOnSecondary};
+  border-width: ${props => props.hasBorderBottom ? 0 : "1"};
+  color: ${props => props.textColor ?? props.theme.colors.textOnSecondary};
 `;
