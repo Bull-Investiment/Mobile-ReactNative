@@ -6,6 +6,7 @@ import Header from '../components/Header';
 
 import Welcome from '../screens/Welcome';
 import Register from '../screens/Register';
+import RegisterStepTwo from '../screens/RegisterStepTwo';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -22,11 +23,26 @@ function AuthRoutes() {
         options={{
           headerShown: true,
           headerStyle: {
-            height: 140,
+            height: 95,
           },
           header: () => (
             <Header
               title="FAÇA SUA CONTA"
+            />
+          )
+        }}
+      />
+      <Screen
+        name="RegisterStepTwo"
+        component={RegisterStepTwo}
+        options={{
+          headerShown: true,
+          headerStyle: {
+            height: 95,
+          },
+          header: () => (
+            <Header
+              title="SÓ MAIS ALGUNS PASSOS"
             />
           )
         }}

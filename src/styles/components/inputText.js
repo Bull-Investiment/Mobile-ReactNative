@@ -9,10 +9,10 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   color: ${props => props.theme.colors.textOnPrimary};
-  font-weight: bold;
-  font-size: 15px;
+  font-family: 'Quicksand-Medium';
+  font-size: 20px;
   margin-bottom: 5px;
-  padding-left: 40px;
+  padding-left: 10px;
   padding-top: 5px;
   align-self: flex-start;
 `;

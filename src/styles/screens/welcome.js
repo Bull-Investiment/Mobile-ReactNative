@@ -18,14 +18,14 @@ export const Content = styled.View`
 
 export const WelcomeText = styled.Text`
   font-family: 'Quicksand-Medium';
-  font-size: 36px;
+  font-size: 30px;
   text-align: left;
   color: ${props => props.theme.colors.textOnPrimary};
-  margin-bottom: 60px;
+  margin-bottom: 5px;
 `;
 
 export const ButtonWrapper = styled.View`
-  padding-top: 30px;
+  padding-top: 20px;
 `;
 
 export const Footer = styled.View`

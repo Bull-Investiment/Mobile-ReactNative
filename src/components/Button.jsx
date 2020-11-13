@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { ButtonContainer, ButtonText } from '../styles/components/button';
+import { Container, CustomButton, ButtonText } from '../styles/components/button';
 
-function Button({ text, primary = false, onPress }) {
+function Button({ text, primary = false, onPress, disabled = false }) {
   return (
-    <ButtonContainer primary={primary} onPress={onPress}>
-      <ButtonText>{text}</ButtonText>
-    </ButtonContainer>
+    <Container disabled={disabled}>
+      <CustomButton disabled={disabled} primary={primary} onPress={onPress}>
+        <ButtonText>{text}</ButtonText>
+      </CustomButton>
+    </Container>
   );
 }
 

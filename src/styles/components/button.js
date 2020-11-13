@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 
-export const ButtonContainer = styled.TouchableOpacity`
+export const Container = styled.View`
+  opacity: ${props => props.disabled ? 0.6 : 1}
+`;
+
+export const CustomButton = styled.TouchableOpacity`
   background-color: ${props => props.primary ? 
     props.theme.colors.primary : 
     props.theme.colors.backgroundSecondary
@@ -13,6 +17,6 @@ export const ButtonContainer = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
   font-family: 'Quicksand-Medium';
-  font-size: 25px;
+  font-size: 22px;
   color: ${props => props.theme.colors.textOnPrimary};
 `;

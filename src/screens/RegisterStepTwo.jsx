@@ -2,20 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import { Container, Content, ButtonWrapper } from '../styles/screens/register';
 
-import { useNavigation } from '@react-navigation/native';
-
 import KeyboardAvoidingComponent from '../components/KeyboardAvoidingComponent';
 import InputText from '../components/InputText';
 import Button from '../components/Button';
 
-function Register() {
-  const navigation = useNavigation();
+function RegisterStepTwo({ route }) {
 
   const [inputValue, setInputValue] = useState({
-    name: "",
-    cpf: "",
-    estado: "",
-    cidade: "",
+    email: "",
+    senha: ""
   });
 
   const [buttonEnabled, setButtonEnabled] = useState(false)
@@ -25,14 +20,16 @@ function Register() {
 
   };
 
-  const goToNextScreen = () => {
-    navigation.navigate('RegisterStepTwo', { userInfo: inputValue });
+  const handleRegisterUser = () => {
+    const userInfo = { ...route.params.userInfo, ...inputValue };
+    // chamar api
+    // logar via context
   }
 
   useEffect(() => {
-    const { name, cpf, estado, cidade } = inputValue;
+    const { email, senha } = inputValue;
 
-    if (name !== '' && cpf !== '' && estado !== '' && cidade !== '') {
+    if (email.includes('@') && senha !== '') {
       setButtonEnabled(true);
     } else {
       setButtonEnabled(false);
@@ -44,40 +41,27 @@ function Register() {
       <Container>
         <Content>
           <InputText
-            title="Nome Completo"
-            name="name"
-            value={inputValue.name}
+            title="Email"
+            name="email"
+            value={inputValue.email}
             onChange={onInputChange}
           />
 
           <InputText
-            title="CPF"
-            name="cpf"
-            value={inputValue.cpf}
+            title="Senha"
+            name="senha"
+            value={inputValue.senha}
             onChange={onInputChange}
-          />
-
-          <InputText
-            title="Estado"
-            name="estado"
-            value={inputValue.estado}
-            onChange={onInputChange}
-          />
-
-          <InputText
-            title="Cidade"
-            name="cidade"
-            value={inputValue.cidade}
-            onChange={onInputChange}
+            isPassword={true}
           />
         </Content>
 
       </Container>
         <ButtonWrapper>
           <Button
-            text="Próximo"
+            text="Cadastrar"
             primary
-            onPress={goToNextScreen}
+            onPress={handleRegisterUser}
             disabled={!buttonEnabled}
           />
         </ButtonWrapper>
@@ -85,4 +69,4 @@ function Register() {
   )
 }
 
-export default Register;
+export default RegisterStepTwo;
