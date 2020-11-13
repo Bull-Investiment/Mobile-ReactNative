@@ -24,13 +24,13 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={dark}>
-      <NavigationContainer>
+    <NavigationContainer>
+      <ThemeProvider theme={dark}>
         <AuthProvider>
           <Routes />
         </AuthProvider>
-      </NavigationContainer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </NavigationContainer>
   )
 }
 

@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#121212"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -41,7 +41,8 @@
         "jsx",
         "json",
         "wasm",
-        "svg"
+        "svg",
+        "**js**"
       ]
     }
   }
