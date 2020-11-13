@@ -4,7 +4,7 @@ import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 import { ThemeContext } from 'styled-components';
 
-import { Container } from '../styles/global';
+import { Container } from '../../styles/global';
 
 import {
   SafeArea,
@@ -16,13 +16,13 @@ import {
   FooterText,
   FooterButtonsWrapper,
   FooterButton
-} from '../styles/screens/welcome';
+} from '../../styles/screens/welcome';
 
-import { GreenText } from '../styles/global';
+import { GreenText } from '../../styles/global';
 
-import WelcomeSvg from '../assets/illustrations/welcomeSvg.svg';
+import WelcomeSvg from '../../assets/illustrations/welcomeSvg.svg';
 
-import Button from '../components/Button';
+import Button from '../../components/Button';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -33,6 +33,10 @@ function Welcome() {
 
   const goToRegisterScreen = () => {
     navigation.navigate('Register');
+  }
+
+  const goToLoginScreen = () => {
+    navigation.navigate('Login');
   }
   
   return (
@@ -47,7 +51,7 @@ function Welcome() {
 
           <View>
             <ButtonWrapper>
-              <Button text="ENTRE" primary onPress={() => {}}/>
+              <Button text="ENTRE" primary onPress={goToLoginScreen}/>
             </ButtonWrapper>
 
             <ButtonWrapper>

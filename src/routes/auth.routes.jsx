@@ -4,9 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../components/Header';
 
-import Welcome from '../screens/Welcome';
-import Register from '../screens/Register';
-import RegisterStepTwo from '../screens/RegisterStepTwo';
+import Welcome from '../screens/auth/Welcome';
+import Register from '../screens/auth/register/StepOne';
+import RegisterStepTwo from '../screens/auth/register/StepTwo';
+import Login from '../screens/auth/Login';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -43,6 +44,22 @@ function AuthRoutes() {
           header: () => (
             <Header
               title="SÓ MAIS ALGUNS PASSOS"
+            />
+          )
+        }}
+      />
+
+      <Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: true,
+          headerStyle: {
+            height: 95,
+          },
+          header: () => (
+            <Header
+              title="ENTRE NA SUA CONTA"
             />
           )
         }}

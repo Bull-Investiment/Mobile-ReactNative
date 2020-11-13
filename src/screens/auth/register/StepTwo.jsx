@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Content, ButtonWrapper } from '../styles/screens/register';
+import { Container, Content, ButtonWrapper } from '../../../styles/screens/register';
 
-import KeyboardAvoidingComponent from '../components/KeyboardAvoidingComponent';
-import InputText from '../components/InputText';
-import Button from '../components/Button';
+import { useNavigation } from '@react-navigation/native';
+
+import KeyboardAvoidingComponent from '../../../components/KeyboardAvoidingComponent';
+import InputText from '../../../components/InputText';
+import Button from '../../../components/Button';
 
 function RegisterStepTwo({ route }) {
-
+  const [buttonEnabled, setButtonEnabled] = useState(false)
   const [inputValue, setInputValue] = useState({
     email: "",
     senha: ""
   });
 
-  const [buttonEnabled, setButtonEnabled] = useState(false)
+  const navigation = useNavigation();
 
   const onInputChange = (name, value) => {
     setInputValue({ ...inputValue, [name]: value });
-
   };
 
   const handleRegisterUser = () => {
     const userInfo = { ...route.params.userInfo, ...inputValue };
     // chamar api
-    // logar via context
+    // logar via context  
   }
 
   useEffect(() => {

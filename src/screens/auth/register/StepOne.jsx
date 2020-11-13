@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Content, ButtonWrapper } from '../styles/screens/register';
+import { Container, Content, ButtonWrapper } from '../../../styles/screens/register';
 
 import { useNavigation } from '@react-navigation/native';
 
-import KeyboardAvoidingComponent from '../components/KeyboardAvoidingComponent';
-import InputText from '../components/InputText';
-import Button from '../components/Button';
+import KeyboardAvoidingComponent from '../../../components/KeyboardAvoidingComponent';
+import InputText from '../../../components/InputText';
+import Button from '../../../components/Button';
 
 function Register() {
   const navigation = useNavigation();

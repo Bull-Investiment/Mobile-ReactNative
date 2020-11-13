@@ -9,7 +9,7 @@ import getStorageDefault from '../util/getStorageDefault';
 
 const AuthContext = createContext({});
 
-export const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }) {
     const [user, setUser] = usePersistentState('@Auth:user', null);
     const [loading, setLoading] = useState(true);
 
@@ -25,16 +25,21 @@ export const AuthProvider = ({ children }) => {
         }
 
         loadToken();
-    }, [])
+    }, []);
     
-    function signOut() {
+    const signOut = () => {
         AsyncStorage.clear().then(() => {
             setUser(null);
         });
     }
 
+    const signIn = (userInfo) => {
+      // logica login -- check user in database etc
+      setUser(userInfo);
+    }
+
     return (
-        <AuthContext.Provider value={{signed: !!user, user, loading, signOut}}> 
+        <AuthContext.Provider value={{signed: !!user, user, loading, signIn, signOut}}> 
             {children}
         </AuthContext.Provider>
     )
@@ -45,3 +50,4 @@ export function useAuth() {
 
     return context;
 }
+
