@@ -14,6 +14,9 @@ import HomeStack from './home.routes';
 import InvestStack from './invest.routes';
 import ProfileStack from './profile.routes';
 
+import InvestGray from '../assets/illustrations/investmentGray.svg';
+import InvestGreen from '../assets/illustrations/investmentGreen.svg';
+
 
 function AppRoutes() {
   const { userHasInvestorInfo } = useAuth();
@@ -25,15 +28,19 @@ function AppRoutes() {
   ) : (
       <Navigator
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ color }) => {
+          tabBarIcon: ({ focused, color }) => {
             let iconName;
 
             if (route.name === 'Home') {
               iconName = 'home';
-            } else if (route.name === 'Invest') {
-              iconName = 'dollar-sign';
-            } else {
+            } else if (route.name === 'Profile') {
               iconName = 'user'
+            } else {
+              return focused ? (
+                <InvestGreen width={'100%'} height={'32px'} />
+              ) : (
+                  <InvestGray width={'100%'} height={'32px'} />
+                )
             }
 
             return <Feather name={iconName} size={32} color={color} />;
