@@ -69,11 +69,11 @@ As seguintes tecnologias foram utilizadas no projeto deste repositório:
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Gabriel-Cervo"><img src="https://avatars3.githubusercontent.com/u/56052678?s=460&u=92c7b9e7ebac7c4a7caee2cd2b67165b460678dd&v=4" width="100px;" alt="João Gabriel Cervo"/><br /><sub><b>Hugo Resende</b></sub></a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/hugo-resende-407594b4/"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGUAIeBkbD7rg/profile-displayphoto-shrink_400_400/0?e=1610582400&v=beta&t=Lc8cI04nRfniwev8C50T-xH3fieZ-tinp5FtDBK9fCA" width="100px;" alt="João Gabriel Cervo"/><br /><sub><b>João G. Cervo</b></sub></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/hugo-resende-407594b4/"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGUAIeBkbD7rg/profile-displayphoto-shrink_400_400/0?e=1610582400&v=beta&t=Lc8cI04nRfniwev8C50T-xH3fieZ-tinp5FtDBK9fCA" width="100px;" alt="Hugo Resende"/><br /><sub><b>Hugo Resende</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Gabriel-Cervo"><img src="https://avatars3.githubusercontent.com/u/56052678?s=460&u=92c7b9e7ebac7c4a7caee2cd2b67165b460678dd&v=4" width="100px;" alt="João Gabriel Cervo"/><br /><sub><b>João G. Cervo</b></sub></a></td>
     <td align="center"><a href="https://github.com/AlvesMatheusO"><img src="https://avatars0.githubusercontent.com/u/53059041?s=460&u=464d41b604f06b390efeda79effa662d0ad3e3e9&v=4" width="100px;" alt="Matheus Alves"/><br /><sub><b>Matheus Alves</b></sub></a></td>
     <td align="center"><a href="https://github.com/paulodevsilva"><img src="https://avatars0.githubusercontent.com/u/52604868?s=400&u=5cb938fc8ccc3b54aae7ed059cc8b3f85151d159&v=44" width="100px;" alt="Paulo Silva"/><br /><sub><b>Paulo Silva</b></sub></a></td>
-    <td align="center"><a href="https://github.com/Exwii"><img src="https://avatars2.githubusercontent.com/u/39139553?s=460&v=4" width="100px;" alt="Thé"/><br /><sub><b>João P. Thé</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Exwii"><img src="https://avatars2.githubusercontent.com/u/39139553?s=460&v=4" width="100px;" alt="João Pedro Thé"/><br /><sub><b>João P. Thé</b></sub></a></td>
     
   </tr>
 </table>
