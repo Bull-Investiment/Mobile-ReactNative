@@ -1,30 +1,77 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { TouchableOpacity } from 'react-native';
 
-import { ScrollView, TouchableOpacity} from 'react-native';
+import { useAuth } from '../../contexts/auth';
 
 import { ThemeContext } from 'styled-components';
 
-import { Feather, Entypo } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
-import { Container, EmptyView } from '../../styles/global';
+import { Container } from '../../styles/global';
 
 import { Content } from '../../styles/screens/home/main';
 
-import { ProfileView } from '../../styles/screens/profile/main';
+import {
+  ProfileView,
+  UserIcon,
+  Name,
+  Email,
+  Menu,
+  MenuOption,
+  MenuIcon,
+  OptionName
+} from '../../styles/screens/profile/main';
 
 
 function Main() {
   const theme = useContext(ThemeContext);
+  const { signOut } = useAuth();
+  
+  const handleLogoutUser = () => {
+    signOut();
+  }
 
   return (
     <Container>
-      <ScrollView>
-        <Content>
-          <ProfileView>
-          </ProfileView>
-        </Content>
-      </ScrollView>
-    </Container>
+      <Content>
+        <ProfileView>
+          <UserIcon>
+            <Feather name="user" size={48} color={theme.colors.primary} />
+          </UserIcon>
+          <Name>Julia Saraiva</Name>
+          <Email>juliaaS@gmail.com</Email>
+        </ProfileView>
+
+        <Menu>
+          <TouchableOpacity>
+            <MenuOption>
+              <MenuIcon>
+                <Feather name="sliders" size={32} color={theme.colors.primary} />
+              </MenuIcon>
+              <OptionName>Configurações</OptionName>
+            </MenuOption>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+          <MenuOption>
+            <MenuIcon>
+              <Feather name="help-circle" size={32} color={theme.colors.primary} />
+            </MenuIcon>
+            <OptionName>Ajuda</OptionName>
+          </MenuOption>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleLogoutUser}>
+            <MenuOption>
+              <MenuIcon>
+                <Feather name="log-out" size={32} color={theme.colors.primary} />
+              </MenuIcon>
+              <OptionName>Sair</OptionName>
+            </MenuOption>
+          </TouchableOpacity>
+        </Menu>
+      </Content>
+    </Container >
   );
 }
 

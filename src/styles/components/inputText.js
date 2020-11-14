@@ -29,6 +29,6 @@ export const Input = styled.TextInput`
   font-size: 18px;
   background-color: ${props => props.backgroundColor ?? props.theme.colors.backgroundSecondary};
   border-radius: 12px;
-  border-width: ${props => props.hasBorderBottom ? 0 : "1"};
+  border-width: ${props => props.hasBorderBottom ? 0 : "1px"};
   color: ${props => props.textColor ?? props.theme.colors.textOnSecondary};
 `;

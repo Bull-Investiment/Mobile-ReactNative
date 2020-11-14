@@ -10,7 +10,7 @@ const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [userHasInvestorInfo, setUserHasInvestorInfo] = useState(true);
+    const [userHasInvestorInfo, setUserHasInvestorInfo] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -30,6 +30,7 @@ export function AuthProvider({ children }) {
     const signOut = () => {
         AsyncStorage.clear().then(() => {
             setUser(null);
+            setUserHasInvestorInfo(false);
         });
     }
 

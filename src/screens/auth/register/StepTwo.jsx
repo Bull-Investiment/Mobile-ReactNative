@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { useAuth } from '../../../contexts/auth';
+
 import { Container, Content, ButtonWrapper } from '../../../styles/screens/register';
 
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +18,7 @@ function RegisterStepTwo({ route }) {
   });
 
   const navigation = useNavigation();
+  const { signIn } = useAuth();
 
   const onInputChange = (name, value) => {
     setInputValue({ ...inputValue, [name]: value });
@@ -25,6 +28,8 @@ function RegisterStepTwo({ route }) {
     const userInfo = { ...route.params.userInfo, ...inputValue };
     // chamar api
     // logar via context  
+
+    signIn(inputValue);
   }
 
   useEffect(() => {

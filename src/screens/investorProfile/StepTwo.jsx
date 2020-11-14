@@ -26,10 +26,11 @@ function StepTwo({ route }) {
       const investorProfileInfo = { ...route.params.rendaMensal, jaInvestiu: true };
 
       navigation.navigate('StepThree', { investorProfileInfo });
+    } else {
+      // Todo -> go to homescreen if 1
+      navigation.navigate('Finish');
     }
 
-    // Todo -> go to homescreen if 2
-    navigation.navigate('Finish');
   }
 
   const handleChangeSelectedOption = (option) => {
