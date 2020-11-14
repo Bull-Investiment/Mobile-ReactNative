@@ -16,15 +16,9 @@ const { Navigator, Screen } = createStackNavigator();
 function InvestorProfile() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen
-        name="StepZero"
-        component={Information}
-      />
+      <Screen name="StepZero" component={Information} />
 
-      <Screen
-        name="StepOne"
-        component={StepOne}
-      />
+      <Screen name="StepOne" component={StepOne} />
 
       <Screen
         name="StepTwo"

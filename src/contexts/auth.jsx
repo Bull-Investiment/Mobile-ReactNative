@@ -10,15 +10,15 @@ const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [userHasInvestorInfo, setUserHasInvestorInfo] = useState(false);
+    const [userHasInvestorInfo, setUserHasInvestorInfo] = useState(true);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadUser() {
             const storagedUser = await getStorage('@Auth:user');
 
-            if (!storagedUser) {
-              setUser(null);
+            if (storagedUser) {
+              setUser(storagedUser);
             }
 
             setLoading(false);
@@ -33,13 +33,14 @@ export function AuthProvider({ children }) {
         });
     }
 
-    const signIn = (userInfo) => {
+    const signIn = async (userInfo) => {
       // do -- logica login -> check user in database etc
       const { email, senha, keepConnection } = userInfo;
 
       if (keepConnection) {
-        const setStatus = setStorage('@Auth:user', { email, senha });
+        const setStatus = await setStorage('@Auth:user', { email, senha });
 
+        console.log(setStatus);
         if (!setStatus) {
           setUser(null);
           return; // erro

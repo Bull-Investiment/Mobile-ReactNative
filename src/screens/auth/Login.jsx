@@ -11,7 +11,6 @@ import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 import Checkbox from 'react-native-custom-checkbox';
 
-
 function Login() {
   const theme = useContext(ThemeContext);
   const { signIn } = useAuth();

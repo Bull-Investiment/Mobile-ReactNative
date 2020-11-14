@@ -14,10 +14,7 @@ const { Navigator, Screen } = createStackNavigator();
 function AuthRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen
-        name="Welcome"
-        component={Welcome}
-      />
+      <Screen name="Welcome" component={Welcome} />
       <Screen
         name="Register"
         component={Register}
