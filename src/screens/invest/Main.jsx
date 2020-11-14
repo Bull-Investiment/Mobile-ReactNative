@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 import { ThemeContext } from 'styled-components';
 
-import { Feather } from '@expo/vector-icons';
-
 import { Container } from '../../styles/global';
 
 import { Content } from '../../styles/screens/home/main';
+
+import Support from '../../assets/illustrations/support.svg';
 
 import {
   RecomendationView,
@@ -57,7 +57,7 @@ function Main() {
 
           <TouchableOpacity>
             <ConsultView>
-              <Feather name="smile" size={30} color={theme.colors.iconOnBackground} />
+              <Support width={'32px'} fill={theme.colors.iconOnBackground} height={'32px'} />
               <TitleAlternative>Entrar no chat</TitleAlternative>
             </ConsultView>
           </TouchableOpacity>

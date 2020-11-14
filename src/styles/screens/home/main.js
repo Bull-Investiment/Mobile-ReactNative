@@ -33,14 +33,16 @@ export const TotalPatrimonyWrapper = styled.View`
 `;
 
 export const TotalPatrimonyText = styled(PatrimonyText)`
-  font-size: 28px;
+  font-size: 36px;
   padding-bottom: 0;
+  font-family: 'Quicksand-Bold';
 `;
 
 export const TotalPatrimonyIcon = styled.TouchableOpacity`
+  justify-content: center;
   background-color: #303030;
   border-radius: 50px;
-  padding: 8px;
+  padding: 12px;
   margin-top: -1px;
   margin-left: 15px;
 `;
@@ -49,6 +51,7 @@ export const PatrimonyGains = styled(PatrimonyText)`
   padding-top: 5px;
   font-size: 20px;
   opacity: 0.6;
+  color: ${props => props.theme.colors.primaryLighter}
 `;
 
 export const InvestmentsView = styled(PatrimonyView)`

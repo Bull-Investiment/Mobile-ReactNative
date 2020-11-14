@@ -6,7 +6,7 @@ import { ThemeContext } from 'styled-components';
 
 import { Feather, Entypo } from '@expo/vector-icons';
 
-import { Container, EmptyView } from '../../styles/global';
+import { Container, EmptyView, GreenText } from '../../styles/global';
 
 import {
   Content,
@@ -39,13 +39,13 @@ function Main() {
           <PatrimonyView>
             <PatrimonyText>Patrimônio</PatrimonyText>
             <TotalPatrimonyWrapper>
-              <EmptyView style={{ marginLeft: 55 }} />
+              <EmptyView style={{ marginLeft: 15 }} />
               <TotalPatrimonyText>{showPatrimony ? 'R$12.451,60' : '?'}</TotalPatrimonyText>
               <TotalPatrimonyIcon onPress={toggleShowPatrimony}>
                 <Feather name={showPatrimony ? 'eye-off' : 'eye'} size={24} color={theme.colors.primary} />
               </TotalPatrimonyIcon>
             </TotalPatrimonyWrapper>
-            <PatrimonyGains>{showPatrimony ? '+ 161,02(3,2%)' : "+ ? (0%)"}</PatrimonyGains>
+            <PatrimonyGains>{showPatrimony ? '+ 161,02 (3,2%)' : "+ ? (0%)"}</PatrimonyGains>
           </PatrimonyView>
 
           <TouchableOpacity>
