@@ -38,7 +38,7 @@ Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiro
 </li>
 
 <li>
-  <h4>Ver inevstimentos</h4>
+  <h4>Ver investimentos</h4>
   <p>Tal como investir, o usuário poderá ver onde o seu capital está aplicado.</p> <br />
 </li>
 
@@ -48,8 +48,8 @@ Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiro
 </li>
 
 <li>
-  <h4>Chat com consultor</h4>
-  <p>Caso o usuáro desejar, poderá conversar com um consultar que lhe ajudará a investir através de um chat integrado no aplicativo.</p> <br />
+  <h4>Chat</h4>
+  <p>Caso o usuáro desejar, poderá conversar com um chatbot através de um chat integrado no aplicativo para tirar quaisquer dúvidas recorrentes. Caso o bot não consiga responder ou a pergunta do usuário for muito complexa, ele será conectado a um consultor.</p> <br />
 </li>
 
 </ul>
