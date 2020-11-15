@@ -17,6 +17,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
 
+import phrases from '../../util/phrases';
+
 function StepTwo({ route }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const navigation = useNavigation();
@@ -39,11 +41,6 @@ function StepTwo({ route }) {
     setSelectedOption(option);
   }
 
-  const phrases = [
-    'Sim',
-    'Não'
-  ];
-
   return (
     <Container>
       <Content>
@@ -63,7 +60,7 @@ function StepTwo({ route }) {
           <OptionsContainer>
             <OptionWrapper>
               <Button
-                text={phrases[0]}
+                text={phrases.questions.stepTwo[0]}
                 primary={selectedOption === 0}
                 onPress={() => handleChangeSelectedOption(0)}
               />
@@ -71,7 +68,7 @@ function StepTwo({ route }) {
 
             <OptionWrapper>
               <Button
-                text={phrases[1]}
+                text={phrases.questions.stepTwo[1]}
                 primary={selectedOption === 1}
                 onPress={() => handleChangeSelectedOption(1)}
               />
@@ -83,7 +80,7 @@ function StepTwo({ route }) {
             text="PRÓXIMO"
             primary
             onPress={goToNextScreen}
-            disabled={!phrases[selectedOption]}
+            disabled={!phrases.questions.stepTwo[selectedOption]}
           />
         </ButtonWrapper>
       </Content>

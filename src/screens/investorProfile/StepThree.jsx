@@ -17,12 +17,14 @@ import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
 
+import phrases from '../../util/phrases';
+
 function StepThree({ route }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    const investorProfileInfo = { ...route.params.investorProfileInfo, third: phrases[selectedOption] };
+    const investorProfileInfo = { ...route.params.investorProfileInfo, third: phrases.questions.stepThree[selectedOption] };
 
     navigation.navigate('StepFour', { investorProfileInfo });
   }
@@ -30,12 +32,6 @@ function StepThree({ route }) {
   const handleChangeSelectedOption = (option) => {
     setSelectedOption(option);
   }
-
-  const phrases = [
-    'Sigo o conselho de alguém para realizar um investimento',
-    'Invisto em algo que tenho conhecimento',
-    'Quero investir no longo prazo sem me importar com a oscilação de mercado'
-  ];
 
   return (
     <Container>
@@ -56,7 +52,7 @@ function StepThree({ route }) {
           <OptionsContainer>
             <OptionWrapper>
               <Button
-                text={phrases[0]}
+                text={phrases.questions.stepThree[0]}
                 primary={selectedOption === 0}
                 onPress={() => handleChangeSelectedOption(0)}
               />
@@ -64,14 +60,14 @@ function StepThree({ route }) {
 
             <OptionWrapper>
               <Button
-                text={phrases[1]}
+                text={phrases.questions.stepThree[1]}
                 primary={selectedOption === 1}
                 onPress={() => handleChangeSelectedOption(1)}
               />
             </OptionWrapper>
             <OptionWrapper>
               <Button
-                text={phrases[2]}
+                text={phrases.questions.stepThree[2]}
                 primary={selectedOption === 2}
                 onPress={() => handleChangeSelectedOption(2)}
               />
@@ -83,7 +79,7 @@ function StepThree({ route }) {
             text="PRÓXIMO"
             primary
             onPress={goToNextScreen}
-            disabled={!phrases[selectedOption]}
+            disabled={!phrases.questions.stepThree[selectedOption]}
           />
         </ButtonWrapper>
       </Content>

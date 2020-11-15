@@ -27,7 +27,7 @@ function Register() {
   };
 
   const goToNextScreen = () => {
-    navigation.navigate('RegisterStepTwo', { userInfo: inputValue });
+    navigation.navigate('RegisterStepTwo', { userInfo: {...inputValue, age: parseInt(inputValue.age) } });
   }
 
   useEffect(() => {

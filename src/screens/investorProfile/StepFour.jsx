@@ -17,12 +17,14 @@ import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
 
+import phrases from '../../util/phrases';
+
 function StepFour({ route }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    const investorProfileInfo = { ...route.params.investorProfileInfo, fourth: phrases[selectedOption] };
+    const investorProfileInfo = { ...route.params.investorProfileInfo, fourth: phrases.questions.stepFour[selectedOption] };
 
     // Todo --> api logic to get the investor level
     navigation.navigate('Finish', { investorProfileInfo });
@@ -31,13 +33,6 @@ function StepFour({ route }) {
   const handleChangeSelectedOption = (option) => {
     setSelectedOption(option);
   }
-
-  const phrases = [
-    'Menos de um ano',
-    'Entre 1 e 5 anos',
-    'Entre 5 e 9 anos',
-    'Mais de 10 anos'
-  ];
 
   return (
     <Container>
@@ -58,7 +53,7 @@ function StepFour({ route }) {
           <OptionsContainer>
             <OptionWrapper>
               <Button
-                text={phrases[0]}
+                text={phrases.questions.stepFour[0]}
                 primary={selectedOption === 0}
                 onPress={() => handleChangeSelectedOption(0)}
               />
@@ -66,7 +61,7 @@ function StepFour({ route }) {
 
             <OptionWrapper>
               <Button
-                text={phrases[1]}
+                text={phrases.questions.stepFour[1]}
                 primary={selectedOption === 1}
                 onPress={() => handleChangeSelectedOption(1)}
               />
@@ -74,7 +69,7 @@ function StepFour({ route }) {
 
             <OptionWrapper>
               <Button
-                text={phrases[2]}
+                text={phrases.questions.stepFour[2]}
                 primary={selectedOption === 2}
                 onPress={() => handleChangeSelectedOption(2)}
               />
@@ -82,7 +77,7 @@ function StepFour({ route }) {
             
             <OptionWrapper>
               <Button
-                text={phrases[3]}
+                text={phrases.questions.stepFour[3]}
                 primary={selectedOption === 3}
                 onPress={() => handleChangeSelectedOption(3)}
               />
@@ -94,7 +89,7 @@ function StepFour({ route }) {
             text="PRÓXIMO"
             primary
             onPress={goToNextScreen}
-            disabled={!phrases[selectedOption]}
+            disabled={!phrases.questions.stepFour[selectedOption]}
           />
         </ButtonWrapper>
       </Content>

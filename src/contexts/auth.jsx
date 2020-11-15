@@ -27,11 +27,10 @@ export function AuthProvider({ children }) {
     loadUser();
   }, []);
 
-  const signOut = () => {
-    AsyncStorage.clear().then(() => {
-      setUser(null);
-      setUserHasInvestorInfo(false);
-    });
+  const signOut = async () => {
+    await AsyncStorage.clear();
+    setUser(null);
+    setUserHasInvestorInfo(false);
   }
 
   const signIn = async (userInfo) => {
@@ -39,7 +38,7 @@ export function AuthProvider({ children }) {
     const { email, password } = userInfo;
 
     try {
-      const response = await api.post('login', { email, password });
+      const response = await api.post('/login', { email, password });
 
       const user = response.data.result;
       delete user.password;
@@ -49,7 +48,7 @@ export function AuthProvider({ children }) {
       }
 
       setUser(user);
-      setUserHasInvestorInfo(user.type.length > 0);
+      setUserHasInvestorInfo(!!user.type);
     } catch (err) {
       console.log(err);
     }

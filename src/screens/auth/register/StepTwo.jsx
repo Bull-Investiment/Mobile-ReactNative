@@ -14,7 +14,7 @@ function RegisterStepTwo({ route }) {
   const [buttonEnabled, setButtonEnabled] = useState(false);
   const [inputValue, setInputValue] = useState({
     email: "",
-    senha: ""
+    password: ""
   });
 
   const { signIn } = useAuth();
@@ -24,24 +24,23 @@ function RegisterStepTwo({ route }) {
   };
 
   const handleRegisterUser = async () => {
-    const userInfo = { ...route.params.userInfo, type: '', ...inputValue };
+    const userInfo = { ...route.params.userInfo, ...inputValue, type: "" };
 
     try {
       const response = await api.post('/users', userInfo);
 
       const user = response.data.result;
-      delete user.password;
 
-      signIn(user);
+      await signIn(user);
     } catch (err) {
       console.log(err);
     }
   }
 
   useEffect(() => {
-    const { email, senha } = inputValue;
+    const { email, password } = inputValue;
 
-    if (email.includes('@') && senha !== '') {
+    if (email.includes('@') && password !== '') {
       setButtonEnabled(true);
     } else {
       setButtonEnabled(false);
@@ -61,8 +60,8 @@ function RegisterStepTwo({ route }) {
 
           <InputText
             title="Senha"
-            name="senha"
-            value={inputValue.senha}
+            name="password"
+            value={inputValue.password}
             onChange={onInputChange}
             isPassword={true}
           />

@@ -11,7 +11,6 @@ import Button from '../../components/Button';
 
 import InvestorIcon from '../../assets/illustrations/investorProfileSvg.svg';
 
-
 function Information() {
   const navigation = useNavigation();
 

@@ -17,6 +17,9 @@ import Button from '../../components/Button';
 
 import { useAuth } from '../../contexts/auth';
 
+import phrases from '../../util/phrases';
+import api from '../../services/api';
+
 const icons = {
   Aprendiz: () => <IconeAprendiz width={'100%'} height={'210'} />,
   Conservador: () => <IconeConservador width={'100%'} height={'210'} />,
@@ -28,13 +31,23 @@ const icons = {
 
 function Finish({ route }) {
   const [profile, setProfile] = useState(null);
-  const { setUserHasInvestorInfo } = useAuth();
+  const { user, setUserHasInvestorInfo } = useAuth();
 
   useEffect(() => {
-    const answers = route.params.investorProfileInfo;
+    async function setInvestorProfile() {
+      const answers = route.params.investorProfileInfo;
+      
+      const type = defineInvestorProfile.rating(answers);
+      
+      try {
+        setProfile(type);
+        await api.put(`/users/${user.id}`, { type });
+      } catch (err) {
+        console.log(err);
+      }
+    }
 
-    setProfile(defineInvestorProfile.rating(answers));
-    // API CALL - edit user
+    setInvestorProfile();
   }, [route.params.investorProfileInfo, setProfile]);
 
   const finishSetup = () => {
@@ -53,11 +66,11 @@ function Finish({ route }) {
           {icons[profile]()}
           <View>
             <Title>Você é um investidor {profile}</Title>
-            <SubText small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit nulla sed interdum dictum. Nulla rutrum tempor massa vitae sollicitudin. Sed ornare fermentum lectus, a efficitur magna. Donec lobortis eu tellus a sodales. Nullam velit libero, dictum ut quam eu, finibus imperdiet metus. Curabitur ut risus vel mauris rutrum rhoncus vel quis felis. Proin cursus ornare scelerisque. Vivamus congue mi eu dapibus commodo. Nulla ut vulputate elit, non lacinia augue. Morbi sagittis tincidunt quam.</SubText>
+            <SubText small>{phrases.investmentProfile[profile]}</SubText>
           </View>
           <ButtonWrapper>
             <Button
-              text="FINALIZAR"
+              text="VAMOS COMEÇAR!"
               primary
               onPress={finishSetup}
             />
