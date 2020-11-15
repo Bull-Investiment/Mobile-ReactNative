@@ -4,9 +4,11 @@ import { ScrollView, TouchableOpacity } from 'react-native';
 
 import { ThemeContext } from 'styled-components';
 
+import { useAuth } from '../../contexts/auth';
+
 import { Feather, Entypo } from '@expo/vector-icons';
 
-import { Container, EmptyView, GreenText } from '../../styles/global';
+import { Container, EmptyView } from '../../styles/global';
 
 import {
   Content,
@@ -26,6 +28,8 @@ function Main() {
   const [showPatrimony, setShowPatrimony] = useState(true);
   const theme = useContext(ThemeContext);
 
+  const { user } = useAuth();
+
   const toggleShowPatrimony = () => {
     setShowPatrimony(prev => !prev);
   }
@@ -34,7 +38,7 @@ function Main() {
     <Container>
       <ScrollView>
         <Content>
-          <Title>Bem vindo/a, Julia!</Title>
+          <Title>Bem vindo/a, {user.name}!</Title>
 
           <PatrimonyView>
             <PatrimonyText>Patrimônio</PatrimonyText>

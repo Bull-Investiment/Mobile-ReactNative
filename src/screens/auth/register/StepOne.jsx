@@ -13,9 +13,10 @@ function Register() {
 
   const [inputValue, setInputValue] = useState({
     name: "",
-    cpf: "",
-    estado: "",
-    cidade: "",
+    cpf_cnpj: "",
+    age: "",
+    state: "",
+    city: "",
   });
 
   const [buttonEnabled, setButtonEnabled] = useState(false)
@@ -30,9 +31,9 @@ function Register() {
   }
 
   useEffect(() => {
-    const { name, cpf, estado, cidade } = inputValue;
+    const { name, cpf_cnpj, age, state, city } = inputValue;
 
-    if (name !== '' && cpf !== '' && estado !== '' && cidade !== '') {
+    if (name !== '' && cpf_cnpj !== '' && parseInt(age) > 0 && state !== '' && city !== '') {
       setButtonEnabled(true);
     } else {
       setButtonEnabled(false);
@@ -51,23 +52,30 @@ function Register() {
           />
 
           <InputText
-            title="CPF"
-            name="cpf"
-            value={inputValue.cpf}
+            title="CPF ou CNPJ"
+            name="cpf_cnpj"
+            value={inputValue.cpf_cnpj}
+            onChange={onInputChange}
+          />
+
+          <InputText
+            title="Idade"
+            name="age"
+            value={inputValue.age}
             onChange={onInputChange}
           />
 
           <InputText
             title="Estado"
-            name="estado"
-            value={inputValue.estado}
+            name="state"
+            value={inputValue.state}
             onChange={onInputChange}
           />
 
           <InputText
             title="Cidade"
-            name="cidade"
-            value={inputValue.cidade}
+            name="city"
+            value={inputValue.city}
             onChange={onInputChange}
           />
         </Content>

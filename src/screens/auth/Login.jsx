@@ -18,7 +18,7 @@ function Login() {
   const [buttonEnabled, setButtonEnabled] = useState(false)
   const [inputValue, setInputValue] = useState({
     email: "",
-    senha: "",
+    password: "",
     keepConnection: false
   });
 
@@ -31,9 +31,9 @@ function Login() {
   }
 
   useEffect(() => {
-    const { email, senha } = inputValue;
+    const { email, password } = inputValue;
 
-    if (email.includes('@') && senha !== '') {
+    if (email.includes('@') && password !== '') {
       setButtonEnabled(true);
     } else {
       setButtonEnabled(false);
@@ -55,8 +55,8 @@ function Login() {
 
           <InputText
             title="Senha"
-            name="senha"
-            value={inputValue.senha}
+            name="password"
+            value={inputValue.password}
             onChange={onInputChange}
             isPassword={true}
           />

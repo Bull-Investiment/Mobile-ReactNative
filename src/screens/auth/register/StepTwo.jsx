@@ -4,11 +4,11 @@ import { useAuth } from '../../../contexts/auth';
 
 import { Container, Content, ButtonWrapper } from '../../../styles/screens/register';
 
-import { useNavigation } from '@react-navigation/native';
-
 import KeyboardAvoidingComponent from '../../../components/KeyboardAvoidingComponent';
 import InputText from '../../../components/InputText';
 import Button from '../../../components/Button';
+
+import api from '../../../services/api';
 
 function RegisterStepTwo({ route }) {
   const [buttonEnabled, setButtonEnabled] = useState(false);
@@ -17,19 +17,25 @@ function RegisterStepTwo({ route }) {
     senha: ""
   });
 
-  const navigation = useNavigation();
   const { signIn } = useAuth();
 
   const onInputChange = (name, value) => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  const handleRegisterUser = () => {
-    const userInfo = { ...route.params.userInfo, ...inputValue };
-    // chamar api
-    // logar via context  
+  const handleRegisterUser = async () => {
+    const userInfo = { ...route.params.userInfo, type: '', ...inputValue };
 
-    signIn(inputValue);
+    try {
+      const response = await api.post('/users', userInfo);
+
+      const user = response.data.result;
+      delete user.password;
+
+      signIn(user);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   useEffect(() => {
@@ -63,14 +69,14 @@ function RegisterStepTwo({ route }) {
         </Content>
 
       </Container>
-        <ButtonWrapper>
-          <Button
-            text="Cadastrar"
-            primary
-            onPress={handleRegisterUser}
-            disabled={!buttonEnabled}
-          />
-        </ButtonWrapper>
+      <ButtonWrapper>
+        <Button
+          text="Cadastrar"
+          primary
+          onPress={handleRegisterUser}
+          disabled={!buttonEnabled}
+        />
+      </ButtonWrapper>
     </KeyboardAvoidingComponent>
   )
 }

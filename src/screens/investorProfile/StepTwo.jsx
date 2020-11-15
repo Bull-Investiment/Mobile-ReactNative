@@ -23,12 +23,14 @@ function StepTwo({ route }) {
 
   const goToNextScreen = () => {
     if (selectedOption === 0) {
-      const investorProfileInfo = { ...route.params.rendaMensal, jaInvestiu: true };
+      const investorProfileInfo = { ...route.params.first, second: true };
 
       navigation.navigate('StepThree', { investorProfileInfo });
     } else {
       // Todo -> go to homescreen if 1
-      navigation.navigate('Finish');
+      const investorProfileInfo = { ...route.params.first, second: false };
+
+      navigation.navigate('Finish', { investorProfileInfo });
     }
 
   }

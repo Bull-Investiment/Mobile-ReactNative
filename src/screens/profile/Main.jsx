@@ -25,7 +25,7 @@ import {
 
 function Main() {
   const theme = useContext(ThemeContext);
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
   
   const handleLogoutUser = () => {
     signOut();
@@ -38,8 +38,8 @@ function Main() {
           <UserIcon>
             <Feather name="user" size={48} color={theme.colors.primary} />
           </UserIcon>
-          <Name>Julia Saraiva</Name>
-          <Email>juliaaS@gmail.com</Email>
+          <Name>{user.name}</Name>
+          <Email>{user.email}</Email>
         </ProfileView>
 
         <Menu>

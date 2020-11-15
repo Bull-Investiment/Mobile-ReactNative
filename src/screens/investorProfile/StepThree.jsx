@@ -22,7 +22,7 @@ function StepThree({ route }) {
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    const investorProfileInfo = { ...route.params.investorProfileInfo, frase: selectedOption };
+    const investorProfileInfo = { ...route.params.investorProfileInfo, third: phrases[selectedOption] };
 
     navigation.navigate('StepFour', { investorProfileInfo });
   }

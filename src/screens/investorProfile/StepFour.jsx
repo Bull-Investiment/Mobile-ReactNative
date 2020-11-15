@@ -22,10 +22,10 @@ function StepFour({ route }) {
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    const investorProfileInfo = { ...route.params.investorProfileInfo, experiencia: selectedOption };
+    const investorProfileInfo = { ...route.params.investorProfileInfo, fourth: phrases[selectedOption] };
 
     // Todo --> api logic to get the investor level
-    navigation.navigate('Finish');
+    navigation.navigate('Finish', { investorProfileInfo });
   }
 
   const handleChangeSelectedOption = (option) => {

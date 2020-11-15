@@ -25,7 +25,7 @@ function StepOne() {
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    const investorProfileInfo = { rendaMensal: income };
+    const investorProfileInfo = { first: income };
     
     navigation.navigate('StepTwo', { investorProfileInfo });
   }
