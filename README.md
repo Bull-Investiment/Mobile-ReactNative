@@ -16,10 +16,10 @@ Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiro
 <h2 id="funcionalidades">Funcionalidades  :mag_right:</h2>
 <ul>
  
- <li>
+<li>
   <h4>Criação de contas e login</h4>
   <p>Será necessário que o usuário realize login para utilizar o app. Caso não haja uma conta, poderá criar em poucos instantes. </p> <br />
- </li>
+</li>
  
  <li>
   <h4>Definição do perfil de investidor do usuário</h4>
@@ -31,22 +31,21 @@ Segundo a Valor Investe, em março de 2020 cerca de 2,24 milhões dos brasileiro
   <h4>Investir</h4>
   <p>Após o perfil definido, o usuário poderá investir no que desejar, tanto renda fixa quanto variável, independente do seu perfil de investidor.</p> <br />
  </li>
+
 <li>
   <h4>Recomendações de investimentos</h4>
   <p>Logo na tela inicial, surgirão recomendações de investimentos para os usuários. Isto será feito com base em seu perfil de investidor e em quais ativos são mais recomendados para o mesmo. Essa recomendação será feita com base em uma I.A para melhor ajudar e simplificar a vida do usuário.</p> <br />
 </li>
 
- <li>
-  <h4>Ver invstimentos</h4>
-  <p>Tal como investir, o usuário poderá ver onde o seu capital está aplicado.</p> <br />
- </li>
 <li>
+  <h4>Ver inevstimentos</h4>
+  <p>Tal como investir, o usuário poderá ver onde o seu capital está aplicado.</p> <br />
+</li>
 
 <li>
   <h4>Ver rendimentos</h4>
   <p>O usuário poderá ver o quanto seus investimentos renderam até o atual momento, tal como seu patrimônio total.</p> <br />
- </li>
-<li>
+</li>
 
 <li>
   <h4>Chat com consultor</h4>
