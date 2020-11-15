@@ -29,11 +29,19 @@ const DATA = [
   },
   {
     id: 2,
-    banco: 'Banco Máxima',
+    banco: 'Banco RNX S/A',
     titulo: 'CDB',
-    rentabilidade: '2,73',
-    valorMinimo: '1066,69',
-    vencimento: '19/10/2022'
+    rentabilidade: '7,35',
+    valorMinimo: '1233,63',
+    vencimento: '20/12/2026'
+  },
+  {
+    id: 3,
+    banco: 'Banco Arbi',
+    titulo: 'CDB',
+    rentabilidade: '3,85',
+    valorMinimo: '1077,84',
+    vencimento: '14/08/2024'
   },
 ];
 

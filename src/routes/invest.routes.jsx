@@ -5,6 +5,7 @@ import Header from '../components/Header';
 
 import Main from '../screens/invest/Main';
 import Details from '../screens/invest/Details';
+import Chat from '../screens/invest/Chat';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -39,6 +40,22 @@ function InvestStack() {
           header: () => (
             <Header
               title="Sobre o tipo de investimento"
+            />
+          )
+        }}
+      />
+
+      <Screen 
+        name="Chat" 
+        component={Chat} 
+        options={{
+          headerShown: true,
+          headerStyle: {
+            height: 95,
+          },
+          header: () => (
+            <Header
+              title="Chat"
             />
           )
         }}

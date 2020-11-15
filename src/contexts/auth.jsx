@@ -28,7 +28,12 @@ export function AuthProvider({ children }) {
   }, []);
 
   const signOut = async () => {
-    await AsyncStorage.clear();
+    const storagedUser = await getStorage('@Auth:user');
+
+    if (storagedUser) {
+      await AsyncStorage.clear();
+    }
+
     setUser(null);
     setUserHasInvestorInfo(false);
   }
@@ -43,12 +48,13 @@ export function AuthProvider({ children }) {
       const user = response.data.result;
       delete user.password;
 
-      if (userInfo.keepConnection) {
-        await setStorage('@Auth:user', user);
-      }
 
       setUser(user);
       setUserHasInvestorInfo(!!user.type);
+      
+      if (userInfo.keepConnection) {
+        await setStorage('@Auth:user', user);
+      }
     } catch (err) {
       console.log(err);
     }

@@ -27,6 +27,10 @@ function Main() {
     navigation.navigate('Details', { name });
   }
 
+  const goToChat = () => {
+    navigation.navigate('Chat');
+  }
+
   return (
     <Container>
       <ScrollView>
@@ -55,7 +59,7 @@ function Main() {
 
           <SubTitle>Fale com um consultor</SubTitle>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goToChat}>
             <ConsultView>
               <Support width={'32px'} fill={theme.colors.iconOnBackground} height={'32px'} />
               <TitleAlternative>Entrar no chat</TitleAlternative>
