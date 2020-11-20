@@ -29,7 +29,7 @@
     "react-native-screens": "~2.10.1",
     "react-native-svg": "12.1.0",
     "react-native-web": "~0.13.12",
-    "react-native-webview": "^10.10.2",
+    "react-native-webview": "10.7.0",
     "rnpm": "^1.9.0",
     "styled-components": "^5.2.1"
   },

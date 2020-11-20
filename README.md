@@ -82,4 +82,4 @@ As seguintes tecnologias foram utilizadas no projeto deste repositório:
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <h2 id="status">Status</h2>
-<p>Em andamento...</p>
+<p>Completo :white_check_mark:</p>
